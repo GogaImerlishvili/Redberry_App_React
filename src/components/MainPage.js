@@ -36,7 +36,7 @@ const MainPage = () => {
   };
   return (
     <>
-      <div className="main_container">
+      <div className="main_container main_main">
         <h1 className="welcome">Welcome Rocketeer!</h1>
         <div className="start">
           <button
