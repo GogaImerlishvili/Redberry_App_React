@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,200&display=swap');
+
+.main_container{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.left{
+    width: 50%
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    margin-top: 13.5%;
+}
+
+.title h1{
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    font-family: Rowdies;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 45px;
+    /* line-height: 79px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FE3B1F; 
+}
+
+.right{
+    width: 50%;
+    background-color: black;
+    height: inherit;
+}
+
+.right-title{
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    margin-left: 9%;
+    margin-top: 15%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right-title h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: #FE3B1F;
+}
+
+.content{
+    height: 50px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    align-items: center;
+    letter-spacing: 0.05em;
+    margin-left: 10%;
+    margin-top: 5%;
+    color: white;
+}
+
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+   
+}
+
+.name,
+.last_name,
+.email,
+.tel{
+  margin: 20px;
+  color: grey;
+  font-size: 16px;
+    
+}
+
+.container-dots {
+  transform: translateX(-50%);
+  display: flex;
+  width: 100%;
+  margin-left: 70%;
+  margin-top: 5%;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #f1f1f1;
+  margin: 0 5px;
+  background: #FE3B1F;
+  cursor: pointer;
+}
+.left-arrow{
+    color: #FE3B1F;
+    border:2px solid #FE3B1F;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    align-items: center;
+}
+
+.left-arrow:hover{
+    background-color: #FE3B1F;
+    color: white;
+}
+
+.right-arrow{
+    color: #FE3B1F;
+    border:2px solid #FE3B1F;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    align-items: center;
+    
+}
+
+.right-arrow:hover{
+    background-color: #FE3B1F;
+    color: white;
+}
+@media (max-width: 935px){
+    .title{
+        display: flex;
+    }
+
+    .title h1{
+        font-size: 38px;
+        
+    }
+
+    .right-title h1{
+        font-size: 38px;
+    }
+    .content{
+        font-size: 28px;
+        margin-top: 5%;
+    }
+
+   
+}
+
+
+@media (max-width: 900px){
+    .title h1{
+        font-size: 34px;
+        position: inherit;
+    }
+    .right-title h1{
+        font-size: 34px;
+    }
+    .content{
+        display: block;
+        grid-template-columns: auto auto 1fr auto;
+        margin-top: -0.5%;
+        font-size: 24px;
+        position: inherit;
+    }
+}
+
+@media (max-width: 768px){
+    .title{
+        display: flex;
+    }
+
+    .title h1{
+        align-items: center;
+    }
+   
+}
+
+
+@media (max-width: 720px){
+    .title{
+        display: flex;
+    }
+
+    .title h1{
+        font-size: 28px;
+        
+    }
+
+    .right-title h1{
+        font-size: 28px;
+    }
+    .content{
+        font-size: 20px;
+        margin-top: 10%;
+    }
+
+   
+}
+
+
+@media (max-width: 600px){
+    .title{
+        display: flex;
+    }
+
+    .title h1{
+        font-size: 28px;
+        
+    }
+
+    .right-title h1{
+        font-size: 28px;
+    }
+    .content{
+        font-size: 20px;
+        margin-top: 10%;
+    }
+
+   
+}
+@media (max-width: 590px){
+    .title{
+        display: flex;
+    }
+
+    .title h1{
+        font-size: 22px;
+        
+    }
+
+    .right-title h1{
+        font-size: 22px;
+    }
+    .content{
+        font-size: 18px;
+        margin-top: 6%;
+    }
+
+   
+}
+
+@media (max-width: 480px){
+    .title{
+       display: flex;
+    }
+    .title h1{
+        font-size: 18px;
+        align-items: center;
+    }
+
+    .right-title h1{
+font-size: 18px;
+    }
+
+    .content{
+        font-size: 16px;
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 480){
+    #OVOmenu{
+        display: grid;
+        grid-template-columns: auto auto 1fr auto;
+    }
+}

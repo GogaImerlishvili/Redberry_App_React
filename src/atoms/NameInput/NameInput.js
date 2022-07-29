@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { MIN_NAME_VALUE } from "../../constants/validation";
-
+import { AiOutlineCheck, AiOutlineMinusSquare } from "react-icons/ai";
 export function NameInput({ name, val }) {
   const [value, setValue] = useState(val);
   const [hasError, setHasError] = useState(false);
@@ -25,16 +25,29 @@ export function NameInput({ name, val }) {
   };
 
   return (
-    <input
-      className={renderClassName()}
-      type="text"
-      placeholder="First Name"
-      name={name}
-      value={value}
-      autoComplete="new-name"
-      required
-      onChange={({ target }) => setValue(target.value)}
-    />
+    <article className="control">
+      <input
+        className={renderClassName()}
+        type="text"
+        placeholder="First Name"
+        name={name}
+        value={value}
+        autoComplete="new-name"
+        required
+        onChange={({ target }) => setValue(target.value)}
+      />
+      {!hasError && value && (
+        <span className="icon">
+          <AiOutlineCheck />
+        </span>
+      )}
+
+      {hasError && value && (
+        <span className="icon-minus">
+          <AiOutlineMinusSquare />
+        </span>
+      )}
+    </article>
   );
 }
 
