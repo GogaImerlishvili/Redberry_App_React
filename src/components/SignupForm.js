@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { NameInput } from "../atoms/NameInput/NameInput";
 import { EmailInput } from "../atoms/EmailInput/EmailInput";
 import { LastNameInput } from "../atoms/LastNameInput/LastNameInput";
 import { TelInput } from "../atoms/TelInput/TelInput";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import classes from "./SignupForm.module.css";
 
 const SignupForm = () => {
   const { setUser, data } = useContext(AuthContext);
@@ -44,52 +45,54 @@ const SignupForm = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="left">
-          <h2 className="title">
-            Hey,Rocketeer,what
-            <br />
-            are your coordinates?
-          </h2>
-        </div>
-        <form className="form-wrapper" onSubmit={onSubmit}>
-          <div>
-            <div className="name">
-              <NameInput name="name" val={data.first_name} />
-            </div>
-            <div className="last_name">
-              <LastNameInput name="last_name" val={data.last_name} />
-            </div>
-            <div className="email">
-              <EmailInput name="email" val={data.email} />
-            </div>
-            <div className="tel">
-              <TelInput name="tel" val={data.phone} />
-            </div>
-            <div className="container-dots">
-              {/* here should be array */}
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
-            </div>
+      <div className={classes["main_container"]}>
+        <div className={classes.left}>
+          <div className={classes.title}>
+            <h1>
+              Hey,Rocketeer,what
+              <br /> are your coordinates?
+            </h1>
           </div>
-          <button
-            className="left-arrow"
-            onClick={() => {
-              backPage();
-            }}
-          >
-            <FaChevronLeft />
-          </button>
-          <button type="submit" className="right-arrow">
-            <FaChevronRight />
-          </button>
-        </form>
-        <div className="right">
-          <h2 className="other_title">Redberry Origins</h2>
-          <p className="content">
+          <form className={classes["form-wrapper"]} onSubmit={onSubmit}>
+            <div className={classes["form-wrapper-inputs"]}>
+              <div className={classes.name}>
+                <NameInput name="name" val={data.first_name} />
+              </div>
+              <div className={classes["last_name"]}>
+                <LastNameInput name="last-name" val={data.last_name} />
+              </div>
+              <div className={classes.email}>
+                <EmailInput name="email" val={data.email} />
+              </div>
+              <div className={classes.tel}>
+                <TelInput name="tel" val={data.phone} />
+              </div>
+              <div className={classes["container-dots"]}>
+                {/* here should be array */}
+                <button
+                  type="button"
+                  className={classes["left-arrow"]}
+                  onClick={backPage}
+                >
+                  <AiOutlineArrowLeft />
+                </button>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <button type="submit" className={classes["right-arrow"]}>
+                  <AiOutlineArrowRight />
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div className={classes.right}>
+          <div className={classes["right-title"]}>
+            <h1>Redberry Origins</h1>
+          </div>
+          <p className={classes.content}>
             You watch “What? Where? When?” Yeah. Our founders used to play it.
             That’s where they got a question about a famous American author and
             screenwriter Ray Bradbury. Albeit, our CEO Gaga Darsalia forgot the
