@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { MIN_EMAIL_VALUE } from "../../../../constants/validation";
-
+import classes from "./ExperienceInput.module.css";
 export function ExperienceInput({ name, val, addSkill, val1, skill }) {
   const [value, setValue] = useState(val);
 
@@ -25,7 +25,7 @@ export function ExperienceInput({ name, val, addSkill, val1, skill }) {
       />
       <div>
         <button
-          className="add_language"
+          className={classes["add_language"]}
           onClick={() => {
             addInput();
           }}
