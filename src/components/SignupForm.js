@@ -59,7 +59,7 @@ const SignupForm = () => {
                 <NameInput name="name" val={data.first_name} />
               </div>
               <div className={classes["last_name"]}>
-                <LastNameInput name="last-name" val={data.last_name} />
+                <LastNameInput name="last_name" val={data.last_name} />
               </div>
               <div className={classes.email}>
                 <EmailInput name="email" val={data.email} />

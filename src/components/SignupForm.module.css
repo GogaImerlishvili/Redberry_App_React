@@ -129,12 +129,19 @@
     background-color: #FE3B1F;
     color: white;
 }
+
+
+
 @media (max-width: 935px){
+    .left{
+        width: 50%;
+    }
     .title{
         display: flex;
     }
 
     .title h1{
+        /* margin-top: -15%; */
         font-size: 38px;
         
     }
@@ -260,11 +267,14 @@ font-size: 18px;
         font-size: 16px;
         margin-top: 10%;
     }
-}
-
-@media (max-width: 480){
-    #OVOmenu{
-        display: grid;
-        grid-template-columns: auto auto 1fr auto;
+    .container-dots{
+        display: flex;
+    }
+    .dot{
+        margin-left: -0.4%;
+    }
+    .left-arrow{
+        margin-left: -5.5%;
     }
 }
+
