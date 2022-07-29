@@ -4,11 +4,12 @@ import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 import { MIN_EMAIL_VALUE } from "../../../constants/validation";
 import { ExperienceInput } from "./ExperienceInput";
 import { FaTrash } from "react-icons/fa";
+import classes from "../SkillsInput/ExperienceInput/SkillInput.module.css";
 export function SkillsInput({ name, val, add }) {
   const [skills, setSkills] = useState([]);
   const [value, setValue] = useState(val);
   const [hasError, setHasError] = useState(false);
-  const { setUser, data, removeById } = useContext(AuthContext);
+  const { data, removeById } = useContext(AuthContext);
 
   const GetSkills = async () => {
     const fetched = await fetch(`https://bootcamp-2022.devtest.ge/api/skills`, {
@@ -58,17 +59,15 @@ export function SkillsInput({ name, val, add }) {
               value={item.title}
               key={item.id}
               selected={item.title === value}
-              // selected={selected}
             >
               {item.title}
             </option>
           );
         })}
       </select>
-      <div className="last_name">
+      <div className={classes["exp_input"]}>
         <ExperienceInput
           name="last_name"
-          // val={data.work_preference}
           val1={skills}
           addSkill={add}
           skill={value}
@@ -78,17 +77,17 @@ export function SkillsInput({ name, val, add }) {
         const skill = skills.find((s) => s.id === e.id);
         return (
           <div>
-            <article className="input">
-              <div className="btn-container">
+            <article className={classes.input}>
+              <div className={classes["button_container"]}>
                 <button
                   type="button"
-                  className="delete-btn"
+                  className={classes["delete_button"]}
                   onClick={() => removeById(e.id)}
                 >
                   <FaTrash />
                 </button>
               </div>
-              <div className="skill_input">
+              <div className={classes["skill_input"]}>
                 {skill?.title}
                 {e?.experience}
               </div>

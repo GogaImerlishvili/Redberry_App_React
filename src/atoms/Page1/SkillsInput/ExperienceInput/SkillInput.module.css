@@ -1,0 +1,37 @@
+.input{
+    display: block;
+    height: 42px;
+    font-size: 20px;
+    outline: none;
+    width: 100%;
+    border: 1px solid #525557;
+    margin-bottom: 10px;
+    
+  }
+
+  .exp_input{
+    margin: 20px;
+    color: grey;
+    font-size: 16px;
+  }
+
+  .button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.delete_button {
+    display: flex;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 0 0.25rem;
+    color: red;
+    margin-left: 90%;
+    margin-top: 3.5%;
+  }
+
+  .skill_input{
+    margin-top: -7%;
+  }
