@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import RocketMan from "../img/rocketman.png";
 import SubmittedApp from "./SubmittedApp";
 import SignupForm from "./SignupForm";
+import classes from "./MainPage.module.css";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -35,31 +37,22 @@ const MainPage = () => {
     navigate1("/page5");
   };
   return (
-    <>
-      <div className="main_container main_main">
-        <h1 className="welcome">Welcome Rocketeer!</h1>
-        <div className="start">
-          <button
-            className="startBtn"
-            onClick={() => {
-              nextPage();
-            }}
-          >
+    <div className={classes["main_container"]}>
+      <div className={classes.title}>
+        <h1>welcome rocketeer!</h1>
+        <div className={classes["start-button"]}>
+          <button type="button" onClick={nextPage}>
             Start Questionnaire
           </button>
-          <button
-            className="startBtn1"
-            onClick={() => {
-              submitted();
-            }}
-          >
-            Submitted Application
-          </button>
         </div>
-
-        <div className="rocketman"></div>
+        <div className={classes["submitted-button"]}>
+          <button onClick={submitted}>Submitted Button</button>
+        </div>
+        <div className={classes.img}>
+          <img src={RocketMan} alt="rocket man" />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
