@@ -1,10 +1,11 @@
 import { useState, useContext } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import About from "../atoms/Page3/About";
 import SpeakAbout from "../atoms/Page3/SpeakAbout";
 import Special from "../atoms/Page3/Special";
+import classes from "./Page3.module.css";
 // import About from "../atoms/Page3/About";
 const Page3 = () => {
   const { data, setAbout } = useContext(AuthContext);
@@ -40,57 +41,63 @@ const Page3 = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="left">
-          <h2 className="title_about">What about you?</h2>
-        </div>
-        <form className="form-wrapper" onSubmit={onSubmit}>
-          <div className="container_about">
-            <About
-              name="orginize_deftalk"
-              setDevtalk={setDevtalk}
-              val={data.will_organize_devtalk}
-              value={devtalk}
-            />
-            <div className="about_devtalik">
-              <SpeakAbout
-                name="devtalk_topik"
-                setDevtalkTopic={setDevtalkTopic}
-                val={data.devtalkTopic}
-              />
-            </div>
-            <div className="about_special">
-              <Special
-                name="special"
-                setSpecial={setSpecial}
-                val={data.special}
-              />
-            </div>
+      <div className={classes["main_container"]}>
+        <div className={classes.left}>
+          <div className={classes.title}>
+            <h1>What about you?</h1>
           </div>
-          <div className="container-dots">
-            {/* here should be array */}
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-          </div>
+          <form className={classes["form_wrapper"]} onSubmit={onSubmit}>
+            <div>
+              <div className={classes.name}>
+                <About
+                  name="orginize_deftalk"
+                  setDevtalk={setDevtalk}
+                  val={data.will_organize_devtalk}
+                  value={devtalk}
+                />
 
-          <button
-            className="left-arrow"
-            onClick={() => {
-              backPage();
-            }}
-          >
-            <FaChevronLeft />
-          </button>
-          <button type="submit" className="right-arrow">
-            <FaChevronRight />
-          </button>
-        </form>
-        <div className="right">
-          <h2 className="other_title">Redberrian Insights</h2>
-          <p className="content_about">
+                <SpeakAbout
+                  name="devtalk_topik"
+                  setDevtalkTopic={setDevtalkTopic}
+                  val={data.devtalkTopic}
+                />
+
+                <Special
+                  name="special"
+                  setSpecial={setSpecial}
+                  val={data.special}
+                />
+              </div>
+              <div className={classes["container-dots"]}>
+                {/* here should be array */}
+                <button
+                  type="button"
+                  className={classes["left-arrow"]}
+                  onClick={backPage}
+                >
+                  <AiOutlineArrowLeft />
+                </button>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <div className={classes.dot}></div>
+                <button
+                  type="submit"
+                  onClick={nextPage}
+                  className={classes["right-arrow"]}
+                >
+                  <AiOutlineArrowRight />
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div className={classes.right}>
+          <div className={classes["right-title"]}>
+            <h1>Redberrian Insights</h1>
+          </div>
+          <p className={classes.content}>
             Redberrian Insights We were soo much fun before the pandemic
             started! Parties almost every weekend and lavish employee birthday
             celebrations! Unfortunately, covid ruined that fun like it did
